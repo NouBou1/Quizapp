@@ -1,5 +1,48 @@
-main{
+.main {
     display: flex;
     justify-content: center;
     align-items: center;
+}
+
+body {
+    min-height: 100vh;
+    background-color: rgb(86, 90, 90) !important;
+}
+
+.list-group-item:hover {
+    background-color: rgba(0, 255, 255, 0.212);
+}
+
+.quiz_picture {
+    border-radius: 8px;
+}
+
+
+
+.question_footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-top: 2px solid rgba(0,0, 0, 0.5);
+    padding-top: 12px;
+}
+
+.bg-success {
+    color: white;
+}
+
+.bg-danger{
+    color: white;
+}
+
+.endCard{
+    display: flex;
+}
+
+.quizCard{
+    
+}
+
+.display_none{
+    display: none;
 }

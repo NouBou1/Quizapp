@@ -5,13 +5,12 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="node_modules\bootstrap\dist\css\bootstrap.min.css">
-    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+    <title>QuizApp</title>
 </head>
 
-<body>
+<body onload="init()">
     <header>
-
-        <!-- <h1>Quizapp</h1>  -->
         <nav class="navbar navbar-light bg-light">
             <div class="container-fluid">
                 <a class="navbar-brand" href="#">
@@ -19,20 +18,43 @@
                 </a>
             </div>
         </nav>
-    
+
     </header>
-    <main style="display: flex; justify-content: center; align-items: center;">
-<div class="card" style="width: 32rem; margin-top: 250px;">
-  <div class="card-header">
-    question
-  </div>
-  <ul class="list-group list-group-flush">
-    <button class="list-group-item">answer one</button>
-    <button class="list-group-item">A second answer</button>
-    <button class="list-group-item">A third answer</button>
-  </ul>
-</div>
+    <main class="main">
+        <div class="card quizCard" style="width: 32rem; margin-top: 140px;">
+            <img class="quiz_picture" src="/assets/img/quizPic.jpg">
+            <div id="question_text" class="card-header">
+                question
+            </div>
+            <ul class="list-group list-group-flush">
+                <button id="answer_1" onclick="answer('answer_1')" class="list-group-item">answer one</button>
+                <button id="answer_2" onclick="answer('answer_2')" class="list-group-item">A second answer</button>
+                <button id="answer_3" onclick="answer('answer_3')" class="list-group-item">A third answer</button>
+                <button id="answer_4" onclick="answer('answer_4')" class="list-group-item">A third answer</button>
+            </ul>
+            <div class="question_footer mt-4">
+                <span>
+                    <b id="current_question"></b>von <b id="all_questions"></b>
+                </span>
+                <button type="button" id="next_btn" onclick="showNextQuestion()" class="btn btn-primary" disabled>nächste Frage</button>
+            </div>
+        </div>
+
+           <div class="card endCard" style="width: 32rem; margin-top: 140px; display: none;" >
+            <img class="quiz_picture" src="/assets/img/quizPic.jpg">
+            <div id="question_text" class="card-header">
+                   Du bist am ende der Fragen angekommen
+            </div>
+            <ul class="list-group list-group-flush">
+       
+            </ul>
+            <div class="question_footer mt-4">
+
+                <button type="button" id="next_btn" onclick="showNextQuestion()" class="btn btn-primary" >Beenden</button>
+            </div>
+        </div>
     </main>
+    <script src="script.js"></script>
 </body>
 
 </html>
